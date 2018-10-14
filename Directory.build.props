@@ -23,7 +23,7 @@
     <PackageOutputPath>$(SolutionDir)\artifacts\nupkg</PackageOutputPath>
     <GeneratePackageOnBuild Condition="!$(ProjectName.EndsWith('Tests')) AND $(Configuration) == 'Release' ">true</GeneratePackageOnBuild>
     <OutputPath>$(SolutionDir)\artifacts\bin</OutputPath>
-    
+    <PackageIconUrl>https://raw.github.com/vchirikov/Simple/master/docs/img/logo.ico</PackageIconUrl>
   </PropertyGroup>
 
   <ItemGroup Condition="!$(ProjectName.EndsWith('Tests'))">
