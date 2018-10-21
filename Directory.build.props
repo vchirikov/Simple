@@ -13,10 +13,11 @@
     <RepositoryUrl>https://github.com/vchirikov/Simple/</RepositoryUrl>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>embedded</DebugType>
+    <DebugType Condition="$(FULL_PDB) == 'true'">full</DebugType>
     <DefaultLanguage>en-US</DefaultLanguage>
     <LangVersion>latest</LangVersion>
     <Product>Simple</Product>
-    <Description>Simple utils</Description>
+    <Description>Simple</Description>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
     <NoLogo>true</NoLogo>
