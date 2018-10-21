@@ -12,8 +12,10 @@
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/vchirikov/Simple/</RepositoryUrl>
     <DebugSymbols>true</DebugSymbols>
-    <DebugType>embedded</DebugType>
-    <DebugType Condition="$(FULL_PDB) == 'true'">full</DebugType>
+    <!--<DebugType>embedded</DebugType>-->
+    <!--<DebugType Condition="$(FULL_PDB) == 'true'">full</DebugType>-->
+    <!-- Azure pipelines don't see FULL_PDB property -->
+    <DebugType>full</DebugType>
     <DefaultLanguage>en-US</DefaultLanguage>
     <LangVersion>latest</LangVersion>
     <Product>Simple</Product>
@@ -27,9 +29,4 @@
     <PackageIconUrl>https://raw.github.com/vchirikov/Simple/master/docs/img/logo.ico</PackageIconUrl>
   </PropertyGroup>
 
-  <ItemGroup Condition="!$(ProjectName.EndsWith('Tests'))">
-
-    <PackageReference Include="Nerdbank.GitVersioning" Version="2.2.13" PrivateAssets="All" />
-    <PackageReference Include="SourceLink.Create.GitHub" Version="2.8.3" PrivateAssets="All" />
-  </ItemGroup>
 </Project>
