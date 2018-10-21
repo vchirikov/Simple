@@ -4,5 +4,7 @@
 
 ### Features
 
-* **Memory:** Added functions GetAddress, ToObject ([5b32a4c](https://github.com/vchirikov/Simple/commit/5b32a4c))
+* **Memory:** Added functions GetAddress, ToObject ([bedac33](https://github.com/vchirikov/Simple/commit/bedac33))
+
+
 
