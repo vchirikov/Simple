@@ -25,10 +25,12 @@ trim_trailing_whitespace = true
 # Visual Studio Solution Files
 [*.sln]
 indent_style = tab
+charset = utf-8
 
 # Visual Studio XML Project Files
 [*.{csproj,vbproj,vcxproj,vcxproj.filters,proj,projitems,shproj}]
 indent_size = 2
+charset = utf-8
 
 # XML Configuration Files
 [*.{xml,config,props,targets,nuspec,resx,ruleset,vsixmanifest,vsct}]
@@ -199,6 +201,7 @@ csharp_space_between_square_brackets = false
 #########################
 
 [*.{cs,csx,cake,vb}]
+charset = utf-8
 # Naming Symbols
 # constant_fields - Define constant fields
 dotnet_naming_symbols.constant_fields.applicable_kinds = field
