@@ -1,4 +1,5 @@
 using System;
+using System.Runtime.CompilerServices;
 using Xunit;
 
 namespace Memory.Tests
@@ -14,7 +15,7 @@ namespace Memory.Tests
             {
                 // ptr points to char array in str
                 var ptr = new IntPtr(charsPtr);
-                ptr = IntPtr.Add(ptr, -sizeof(int) - IntPtr.Size);
+                ptr = IntPtr.Add(ptr, - RuntimeHelpers.OffsetToStringData /*sizeof(int) - IntPtr.Size*/);
                 var castedString = ptr.ToObject<string>(ObjectPointerTo.MethodTablePointer);
 
                 Assert.Same(str, castedString);

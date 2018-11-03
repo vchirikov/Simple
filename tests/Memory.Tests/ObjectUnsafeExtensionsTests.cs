@@ -1,4 +1,5 @@
 using System;
+using System.Runtime.CompilerServices;
 using Xunit;
 
 namespace Memory.Tests
@@ -16,7 +17,7 @@ namespace Memory.Tests
             {
                 var bytesPtr = (byte*)charsPtr;
                 // bytesPtr/charsPtr points to {'a','a','a'}, without len field and methodTablePtr
-                var expectedPtr = bytesPtr - sizeof(int) - IntPtr.Size;
+                var expectedPtr = bytesPtr - RuntimeHelpers.OffsetToStringData; // sizeof(int) - IntPtr.Size;
 
                 var expectedPtrSpan = new Span<byte>(expectedPtr, methodTablePtrWithDataLen);
                 var actualPtrSpan = actualPtr.AsSpan<byte>(methodTablePtrWithDataLen);
@@ -39,7 +40,7 @@ namespace Memory.Tests
                 var expectedPtr = bytesPtr - sizeof(int);
 
                 var expectedPtrSpan = new Span<byte>(expectedPtr, objectDataLen);
-                var actualPtrSpan = actualPtr.AsSpan<byte>(objectDataLen);
+                var actualPtrSpan = actualPtr.AsSpan<byte>(0, objectDataLen);
 
                 Assert.Equal((long)expectedPtr, (long)actualPtr);
             }

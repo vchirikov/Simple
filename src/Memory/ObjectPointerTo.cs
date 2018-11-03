@@ -8,12 +8,14 @@ namespace Memory
     /// </summary>
     /// <seealso href="https://blogs.msdn.microsoft.com/abhinaba/2012/02/02/wp7-clr-managed-object-overhead/"/>
     /// <seealso href="https://blogs.msdn.microsoft.com/seteplia/2017/09/06/managed-object-internals-part-2-object-header-layout-and-the-cost-of-locking/"/>
+
     public enum ObjectPointerTo: byte
     {
         /// <summary>
         ///                | POINTER
         /// [objectHeader] V [methodTablePtr] [objectData]
         /// </summary>
+        /// <seealso href="https://github.com/dotnet/coreclr/blob/master/src/vm/methodtable.h"/>    
         MethodTablePointer = 0,
         /// <summary>
         /// | POINTER
